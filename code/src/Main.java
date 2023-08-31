@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Clock clock = new Clock();
-        Scanner scanner = new Scanner(System.in);
+        Clock clock = new Clock();  // Cria uma instância da classe Clock
+        Scanner scanner = new Scanner(System.in);  // Cria um scanner para ler entradas do usuário
 
-        boolean running = true;
+        boolean running = true;  // Variável para controlar a execução do programa
 
         while (running) {
             System.out.println("Selecione uma opção:");
@@ -18,7 +18,7 @@ public class Main {
             System.out.println("7. Obter minutos");
             System.out.println("8. Obter segundos");
             System.out.println("9. Sair");
-            int choice = scanner.nextInt();
+            int choice = scanner.nextInt();  // Lê a escolha do usuário
 
             switch (choice) {
                 case 1:
@@ -28,10 +28,10 @@ public class Main {
                     int newMinutes = scanner.nextInt();
                     System.out.print("Digite os novos segundos: ");
                     int newSeconds = scanner.nextInt();
-                    clock.set(newHours, newMinutes, newSeconds);
+                    clock.set(newHours, newMinutes, newSeconds);  // Define um novo horário no relógio
                     break;
                 case 2:
-                    clock.reset();
+                    clock.reset();  // Zera o relógio
                     System.out.println("Relógio zerado.");
                     break;
                 case 3:
@@ -41,33 +41,33 @@ public class Main {
                     int stopWatchMinutes = scanner.nextInt();
                     System.out.print("Digite os novos segundos: ");
                     int stopWatchSeconds = scanner.nextInt();
-                    int elapsedTime = clock.stopWatch(stopWatchHours, stopWatchMinutes, stopWatchSeconds);
+                    int elapsedTime = clock.stopWatch(stopWatchHours, stopWatchMinutes, stopWatchSeconds); // Calcula o tempo decorrido
                     System.out.println("Tempo no cronômetro: " + elapsedTime + " segundos.");
                     break;
                 case 4:
-                    clock.print24HourFormat();
+                    clock.print24HourFormat();  // Imprime o horário no formato de 24 horas
                     break;
                 case 5:
-                    clock.printAMPMFormat();
+                    clock.printAMPMFormat();  // Imprime o horário no formato AM/PM
                     break;
                 case 6:
-                    System.out.println("Horas: " + clock.getHours());
+                    System.out.println("Horas: " + clock.getHours());  // Obtém e imprime as horas
                     break;
                 case 7:
-                    System.out.println("Minutos: " + clock.getMinutes());
+                    System.out.println("Minutos: " + clock.getMinutes());  // Obtém e imprime os minutos
                     break;
                 case 8:
-                    System.out.println("Segundos: " + clock.getSeconds());
+                    System.out.println("Segundos: " + clock.getSeconds());  // Obtém e imprime os segundos
                     break;
                 case 9:
-                    running = false;
+                    running = false;  // Sai do loop e encerra o programa
                     break;
                 default:
                     System.out.println("Opção inválida.");
             }
         }
 
-        scanner.close();
+        scanner.close();  // Fecha o scanner
         System.out.println("Programa encerrado.");
     }
 }
